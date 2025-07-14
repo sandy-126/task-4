@@ -1,0 +1,133 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .dark-mode {
+    background-color: #121212;
+    color: #f1f1f1;
+  }
+  
+  a { text-decoration: none; }
+  button {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Header */
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: #fff;
+  }
+  .dark-mode header nav {
+    background: #1e1e1e;
+    color: white;
+  }
+  #themeToggle {
+    background: transparent;
+    color: #007bff;
+    font-size: 1.2rem;
+  }
+  
+  /* Hero */
+  .hero {
+    height: 100vh;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+  .hero h2 {
+    font-size: 3rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+  }
+  
+  /* Sections */
+  section {
+    padding: 4rem 5%;
+  }
+  .about h2,
+  .projects h2,
+  .contact h2 {
+    margin-bottom: 1rem;
+  }
+  .skills {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+  }
+  .skills li {
+    background: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .project-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .card-content {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  .dark-mode .card-content {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .contact form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contact input,
+  .contact textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: #eee;
+  }
+  .dark-mode footer {
+    background: #222;
+  }
+  
