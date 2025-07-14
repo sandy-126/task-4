@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>To-Do App - Sandeep</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      padding: 4rem 2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    .todo-container {
+      background: #fff;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .dark-mode .todo-container {
+      background: #1e1e1e;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    input[type="text"] {
+      width: calc(100% - 100px);
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button.add-btn {
+      padding: 10px 15px;
+      margin-left: 10px;
+      border-radius: 5px;
+    }
+    ul {
+      list-style: none;
+      margin-top: 1rem;
+      padding: 0;
+    }
+    li {
+      background: #f1f1f1;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .dark-mode li {
+      background: #333;
+      color: #f1f1f1;
+    }
+    .delete-btn {
+      background: red;
+      padding: 5px 10px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="todo-container">
+    <h1>To-Do App</h1>
+    <div style="display: flex; align-items: center;">
+      <input type="text" id="taskInput" placeholder="Enter a task..." />
+      <button class="add-btn" onclick="addTask()">Add</button>
+    </div>
+    <ul id="taskList"></ul>
+    <button onclick="window.history.back()" style="margin-top: 20px;">← Back</button>
+  </div>
+
+  <script>
+    // Load tasks from localStorage
+    window.onload = function () {
+      const saved = localStorage.getItem("tasks");
+      if (saved) {
+        document.getElementById("taskList").innerHTML = saved;
+      }
+    };
+
+    // Save tasks on change
+    function saveTasks() {
+      const list = document.getElementById("taskList").innerHTML;
+      localStorage.setItem("tasks", list);
+    }
+
+    function addTask() {
+      const input = document.getElementById("taskInput");
+      const taskText = input.value.trim();
+      if (!taskText) return;
+
+      const li = document.createElement("li");
+      li.innerHTML = `
+        ${taskText}
+        <button class="delete-btn" onclick="this.parentElement.remove(); saveTasks()">Delete</button>
+      `;
+      document.getElementById("taskList").appendChild(li);
+      input.value = "";
+      saveTasks();
+    }
+  </script>
+</body>
+</html>
