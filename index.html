@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sandeep | Web Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="home">
+  <header>
+    <nav>
+      <h1>Sandeep</h1>
+      <button id="themeToggle">🌓</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Hello, I'm Sandeep</h2>
+      <p>Web Developer Intern at ApexPlanet</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <p>I’m a passionate web developer intern who loves crafting beautiful, functional websites. I specialize in HTML, CSS, JavaScript, and building responsive user experiences.</p>
+    <ul class="skills">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Responsive Design</li>
+      <li>UI/UX</li>
+    </ul>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card" style="background-image: url(' https://via.placeholder.com/500x300?text=To-Do+App');">
+        <div class="card-content">
+          <h3>To-Do App</h3>
+          <p>Task manager using JavaScript + localStorage</p>
+          <a href="todo.html"><button>View To-Do Project</button></a>
+        </div>
+      </div>
+      <div class="project-card" style="background-image: url(' https://via.placeholder.com/500x300?text=Product+Filter');">
+        <div class="card-content">
+          <h3>Product Filter Page</h3>
+          <p>E-commerce filter UI with price/category sort</p>
+          <a href="product.html"><button>View Product Project</button></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p id="formStatus"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Sandeep. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
